@@ -8,7 +8,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: './dist/app.js'
+    filename: './app.js'
   },
   entry: [
     './src/index.js'

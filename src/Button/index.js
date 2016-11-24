@@ -20,7 +20,7 @@ export default class Button extends Component {
       'mdl-button--accent': accent,
       'mdl-button--primary': primary,
       'mdl-button--icon': icon,
-      'mdl-button--fab mdl-button--mini-fab': miniFab || miniFAB;
+      'mdl-button--fab mdl-button--mini-fab': miniFab || miniFAB
     }, this.props.className);
   }
 

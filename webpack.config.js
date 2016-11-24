@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   module: {
     loaders: [
-      { test: /\.jss?$/, exclude: /node_modules/, loader: "babel-loader" }
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" }
     ]
   },
   output: {

@@ -23,7 +23,6 @@ module.exports = {
   },
   output: {
     filename: './index.js',
-    // library: 'mdl',
     libraryTarget: 'commonjs2'
   },
   entry: [

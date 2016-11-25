@@ -63,20 +63,109 @@ module.exports =
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Chip = exports.Button = exports.Badge = undefined;
 	
-	var _Button = __webpack_require__(/*! ./Button */ 2);
+	var _Badge2 = __webpack_require__(/*! ./Badge */ 2);
 	
-	Object.defineProperty(exports, 'Button', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_Button).default;
-	  }
-	});
-
+	var _Badge3 = _interopRequireDefault(_Badge2);
+	
+	var _Button2 = __webpack_require__(/*! ./Button */ 3);
+	
+	var _Button3 = _interopRequireDefault(_Button2);
+	
+	var _Chip2 = __webpack_require__(/*! ./Chip */ 6);
+	
+	var _Chip3 = _interopRequireDefault(_Chip2);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.Badge = _Badge3.default;
+	exports.Button = _Button3.default;
+	exports.Chip = _Chip3.default;
 
 /***/ },
 /* 2 */
+/*!****************************!*\
+  !*** ./src/Badge/index.js ***!
+  \****************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(/*! classnames */ 5);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Badge = function (_Component) {
+	  _inherits(Badge, _Component);
+	
+	  function Badge() {
+	    _classCallCheck(this, Badge);
+	
+	    return _possibleConstructorReturn(this, (Badge.__proto__ || Object.getPrototypeOf(Badge)).apply(this, arguments));
+	  }
+	
+	  _createClass(Badge, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          _props$Component = _props.Component,
+	          Component = _props$Component === undefined ? 'span' : _props$Component,
+	          _props$dataBadge = _props['data-badge'],
+	          dataBadge = _props$dataBadge === undefined ? '4' : _props$dataBadge,
+	          children = _props.children,
+	          _props$overlap = _props.overlap,
+	          overlap = _props$overlap === undefined ? false : _props$overlap,
+	          _props$icon = _props.icon,
+	          icon = _props$icon === undefined ? false : _props$icon,
+	          _props$background = _props.background,
+	          background = _props$background === undefined ? true : _props$background,
+	          _props$disabled = _props.disabled,
+	          disabled = _props$disabled === undefined ? false : _props$disabled,
+	          _props$contact = _props.contact,
+	          contact = _props$contact === undefined ? false : _props$contact;
+	
+	
+	      var classes = (0, _classnames2.default)('mdl-badge', {
+	        'mdl-chip--contact': contact,
+	        'mdl-badge--overlap': overlap,
+	        'material-icon': icon,
+	        'mdl-badge--no-background': !background
+	      }, this.props.className);
+	
+	      return _react2.default.createElement(
+	        Component,
+	        { className: classes, 'data-badge': dataBadge },
+	        children
+	      );
+	    }
+	  }]);
+	
+	  return Badge;
+	}(_react.Component);
+	
+	exports.default = Badge;
+
+/***/ },
+/* 3 */
 /*!*****************************!*\
   !*** ./src/Button/index.js ***!
   \*****************************/
@@ -90,11 +179,11 @@ module.exports =
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _react = __webpack_require__(/*! react */ 3);
+	var _react = __webpack_require__(/*! react */ 4);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames = __webpack_require__(/*! classnames */ 4);
+	var _classnames = __webpack_require__(/*! classnames */ 5);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -139,7 +228,9 @@ module.exports =
 	          _props$miniFab = _props.miniFab,
 	          miniFab = _props$miniFab === undefined ? false : _props$miniFab,
 	          _props$miniFAB = _props.miniFAB,
-	          miniFAB = _props$miniFAB === undefined ? false : _props$miniFAB;
+	          miniFAB = _props$miniFAB === undefined ? false : _props$miniFAB,
+	          _props$disabled = _props.disabled,
+	          disabled = _props$disabled === undefined ? false : _props$disabled;
 	
 	
 	      var classes = (0, _classnames2.default)('mdl-button mdl-js-button', {
@@ -155,7 +246,7 @@ module.exports =
 	
 	      return _react2.default.createElement(
 	        'button',
-	        { className: classes },
+	        { className: classes, disabled: disabled },
 	        children
 	      );
 	    }
@@ -167,7 +258,7 @@ module.exports =
 	exports.default = Button;
 
 /***/ },
-/* 3 */
+/* 4 */
 /*!**************************************************************************************!*\
   !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
   \**************************************************************************************/
@@ -176,7 +267,7 @@ module.exports =
 	module.exports = require("react");
 
 /***/ },
-/* 4 */
+/* 5 */
 /*!*******************************!*\
   !*** ./~/classnames/index.js ***!
   \*******************************/
@@ -231,6 +322,92 @@ module.exports =
 		}
 	}());
 
+
+/***/ },
+/* 6 */
+/*!***************************!*\
+  !*** ./src/Chip/index.js ***!
+  \***************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(/*! classnames */ 5);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Chip = function (_Component) {
+	  _inherits(Chip, _Component);
+	
+	  function Chip() {
+	    _classCallCheck(this, Chip);
+	
+	    return _possibleConstructorReturn(this, (Chip.__proto__ || Object.getPrototypeOf(Chip)).apply(this, arguments));
+	  }
+	
+	  _createClass(Chip, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          children = _props.children,
+	          _props$colored = _props.colored,
+	          colored = _props$colored === undefined ? false : _props$colored,
+	          _props$ripple = _props.ripple,
+	          ripple = _props$ripple === undefined ? false : _props$ripple,
+	          _props$fab = _props.fab,
+	          fab = _props$fab === undefined ? false : _props$fab,
+	          _props$FAB = _props.FAB,
+	          FAB = _props$FAB === undefined ? false : _props$FAB,
+	          _props$raised = _props.raised,
+	          raised = _props$raised === undefined ? false : _props$raised,
+	          _props$accent = _props.accent,
+	          accent = _props$accent === undefined ? false : _props$accent,
+	          _props$primary = _props.primary,
+	          primary = _props$primary === undefined ? false : _props$primary,
+	          _props$icon = _props.icon,
+	          icon = _props$icon === undefined ? false : _props$icon,
+	          _props$miniFab = _props.miniFab,
+	          miniFab = _props$miniFab === undefined ? false : _props$miniFab,
+	          _props$miniFAB = _props.miniFAB,
+	          miniFAB = _props$miniFAB === undefined ? false : _props$miniFAB,
+	          _props$disabled = _props.disabled,
+	          disabled = _props$disabled === undefined ? false : _props$disabled;
+	
+	
+	      var outerClasses = (0, _classnames2.default)('mdl-chip', {
+	        'mdl-chip--contact': contact
+	      }, this.props.className);
+	
+	      return _react2.default.createElement(
+	        'button',
+	        { className: classes, disabled: disabled },
+	        children
+	      );
+	    }
+	  }]);
+	
+	  return Chip;
+	}(_react.Component);
+	
+	exports.default = Chip;
 
 /***/ }
 /******/ ]);

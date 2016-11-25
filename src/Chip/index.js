@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 
-export default class Button extends Component {
-
+export default class Chip extends Component {
   render() {
     const {
       children,
@@ -19,15 +18,8 @@ export default class Button extends Component {
       disabled = false
     } = this.props;
 
-    const classes = classNames('mdl-button mdl-js-button', {
-      'mdl-button--fab': fab || FAB,
-      'mdl-button--colored': colored,
-      'mdl-js-ripple-effect': ripple,
-      'mdl-button--raised': raised,
-      'mdl-button--accent': accent,
-      'mdl-button--primary': primary,
-      'mdl-button--icon': icon,
-      'mdl-button--fab mdl-button--mini-fab': miniFab || miniFAB
+    const outerClasses = classNames('mdl-chip', {
+      'mdl-chip--contact': contact,
     }, this.props.className);
 
     return (

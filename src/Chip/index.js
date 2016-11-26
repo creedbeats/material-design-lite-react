@@ -5,27 +5,32 @@ export default class Chip extends Component {
   render() {
     const {
       children,
-      colored = false,
-      ripple = false,
-      fab = false,
-      FAB = false,
-      raised = false,
-      accent = false,
-      primary = false,
-      icon = false,
-      miniFab = false,
-      miniFAB = false,
-      disabled = false
+      deletable = false,
+      contact = false,
+      Component = 'span',
+      deleteAction = () => {},
+      ...rest
     } = this.props;
 
-    const outerClasses = classNames('mdl-chip', {
+    const classes = classNames('mdl-chip', {
       'mdl-chip--contact': contact,
     }, this.props.className);
 
+    const contactDiv = contact ? (
+      <span className="mdl-chip__contact mdl-color--teal mdl-color-text--white">
+        {contact}
+      </span>
+    ) : null
+
+    const deleteButton = deletable ? (
+      <button onClick={deleteAction} className="mdl-chip__action"><i className="material-icons">cancel</i></button>
+    ) : null;
     return (
-      <button className={classes} disabled={disabled}>
-        {children}
-      </button>
+      <Component {...rest} className={classes}>
+        {contactDiv}
+        <span className="mdl-chip__text">{children}</span>
+        {deleteButton}
+      </Component>
     );
   }
 }

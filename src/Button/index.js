@@ -16,11 +16,11 @@ export default class Button extends Component {
       icon = false,
       miniFab = false,
       miniFAB = false,
-      disabled = false
+      ...rest
     } = this.props;
 
     const classes = classNames('mdl-button mdl-js-button', {
-      'mdl-button--fab': fab || FAB,
+      'mdl-button--fab': fab,
       'mdl-button--colored': colored,
       'mdl-js-ripple-effect': ripple,
       'mdl-button--raised': raised,
@@ -31,7 +31,7 @@ export default class Button extends Component {
     }, this.props.className);
 
     return (
-      <button className={classes} disabled={disabled}>
+      <button {...rest} className={classes}>
         {children}
       </button>
     );

@@ -5,24 +5,24 @@ export default class Badge extends Component {
   render() {
     const {
       Component = 'span',
-      'data-badge': dataBadge = '4',
       children,
       overlap = false,
       icon = false,
       background = true,
       disabled = false,
       contact = false,
+      ...rest
     } = this.props;
 
     const classes = classNames('mdl-badge', {
       'mdl-chip--contact': contact,
       'mdl-badge--overlap': overlap,
-      'material-icon': icon,
+      'material-icons': icon,
       'mdl-badge--no-background': !background
     }, this.props.className);
 
     return (
-      <Component className={classes} data-badge={dataBadge}>
+      <Component {...rest} className={classes}>
         {children}
       </Component>
     );

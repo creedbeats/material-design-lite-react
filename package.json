@@ -1,7 +1,7 @@
 {
   "name": "mdl-react-components",
   "version": "0.0.1",
-  "description": "",
+  "description": "A react component wrapper for mdl components",
   "main": "index.js",
   "scripts": {
     "webpack": "./node_modules/.bin/webpack",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/creeddesigns/mdl-react-components.git"
   },
-  "author": "",
+  "author": "Chris Reed",
   "license": "ISC",
   "homepage": "https://bitbucket.org/creeddesigns/mdl-react-components#readme",
   "devDependencies": {

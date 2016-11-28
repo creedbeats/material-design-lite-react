@@ -40,7 +40,7 @@ export class Radio extends Component {
 
     return (
       <label className={classes} htmlFor={id}>
-        <input id={id} {...rest} type="checkbox" className="mdl-radio__button" />
+        <input id={id} {...rest} type="radio" className="mdl-radio__button" />
         <span className="mdl-radio__label">{children}</span>
       </label>
     );

@@ -1000,7 +1000,7 @@ module.exports =
 	      return _react2.default.createElement(
 	        'label',
 	        { className: classes, htmlFor: id },
-	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'checkbox', className: 'mdl-radio__button' })),
+	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'radio', className: 'mdl-radio__button' })),
 	        _react2.default.createElement(
 	          'span',
 	          { className: 'mdl-radio__label' },

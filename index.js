@@ -63,7 +63,7 @@ module.exports =
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Tooltip = exports.MenuItem = exports.Menu = exports.Chip = exports.CardActions = exports.CardText = exports.CardMedia = exports.CardTitle = exports.Card = exports.Button = exports.Badge = undefined;
+	exports.Tooltip = exports.Switch = exports.IconToggle = exports.Radio = exports.Checkbox = exports.MenuItem = exports.Menu = exports.Chip = exports.CardActions = exports.CardText = exports.CardMedia = exports.CardTitle = exports.Card = exports.Button = exports.Badge = undefined;
 	
 	var _Card = __webpack_require__(/*! ./Card */ 2);
 	
@@ -110,6 +110,33 @@ module.exports =
 	  enumerable: true,
 	  get: function get() {
 	    return _Menu.MenuItem;
+	  }
+	});
+	
+	var _Toggles = __webpack_require__(/*! ./Toggles */ 10);
+	
+	Object.defineProperty(exports, 'Checkbox', {
+	  enumerable: true,
+	  get: function get() {
+	    return _Toggles.Checkbox;
+	  }
+	});
+	Object.defineProperty(exports, 'Radio', {
+	  enumerable: true,
+	  get: function get() {
+	    return _Toggles.Radio;
+	  }
+	});
+	Object.defineProperty(exports, 'IconToggle', {
+	  enumerable: true,
+	  get: function get() {
+	    return _Toggles.IconToggle;
+	  }
+	});
+	Object.defineProperty(exports, 'Switch', {
+	  enumerable: true,
+	  get: function get() {
+	    return _Toggles.Switch;
 	  }
 	});
 	
@@ -871,6 +898,198 @@ module.exports =
 	}(_react.Component);
 	
 	exports.default = Tooltip;
+
+/***/ },
+/* 10 */
+/*!******************************!*\
+  !*** ./src/Toggles/index.js ***!
+  \******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Switch = exports.IconToggle = exports.Radio = exports.Checkbox = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 3);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _classnames = __webpack_require__(/*! classnames */ 4);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Checkbox = exports.Checkbox = function (_Component) {
+	  _inherits(Checkbox, _Component);
+	
+	  function Checkbox() {
+	    _classCallCheck(this, Checkbox);
+	
+	    return _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).apply(this, arguments));
+	  }
+	
+	  _createClass(Checkbox, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props = this.props,
+	          children = _props.children,
+	          id = _props.id,
+	          ripple = _props.ripple,
+	          className = _props.className,
+	          rest = _objectWithoutProperties(_props, ['children', 'id', 'ripple', 'className']);
+	
+	      var classes = (0, _classnames2.default)('mdl-checkbox mdl-js-checkbox', {
+	        'mdl-js-ripple-effect': ripple
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'label',
+	        { className: classes, htmlFor: id },
+	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'checkbox', className: 'mdl-checkbox__input' })),
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'mdl-checkbox__label' },
+	          children
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Checkbox;
+	}(_react.Component);
+	
+	var Radio = exports.Radio = function (_Component2) {
+	  _inherits(Radio, _Component2);
+	
+	  function Radio() {
+	    _classCallCheck(this, Radio);
+	
+	    return _possibleConstructorReturn(this, (Radio.__proto__ || Object.getPrototypeOf(Radio)).apply(this, arguments));
+	  }
+	
+	  _createClass(Radio, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props2 = this.props,
+	          children = _props2.children,
+	          id = _props2.id,
+	          ripple = _props2.ripple,
+	          className = _props2.className,
+	          rest = _objectWithoutProperties(_props2, ['children', 'id', 'ripple', 'className']);
+	
+	      var classes = (0, _classnames2.default)('mdl-radio mdl-js-radio', {
+	        'mdl-js-ripple-effect': ripple
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'label',
+	        { className: classes, htmlFor: id },
+	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'checkbox', className: 'mdl-radio__button' })),
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'mdl-radio__label' },
+	          children
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Radio;
+	}(_react.Component);
+	
+	var IconToggle = exports.IconToggle = function (_Component3) {
+	  _inherits(IconToggle, _Component3);
+	
+	  function IconToggle() {
+	    _classCallCheck(this, IconToggle);
+	
+	    return _possibleConstructorReturn(this, (IconToggle.__proto__ || Object.getPrototypeOf(IconToggle)).apply(this, arguments));
+	  }
+	
+	  _createClass(IconToggle, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props3 = this.props,
+	          children = _props3.children,
+	          id = _props3.id,
+	          ripple = _props3.ripple,
+	          className = _props3.className,
+	          rest = _objectWithoutProperties(_props3, ['children', 'id', 'ripple', 'className']);
+	
+	      var classes = (0, _classnames2.default)('mdl-icon-toggle mdl-js-icon-toggle', {
+	        'mdl-js-ripple-effect': ripple
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'label',
+	        { className: classes, htmlFor: id },
+	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'checkbox', className: 'mdl-icon-toggle__input' })),
+	        _react2.default.createElement(
+	          'i',
+	          { className: 'mdl-icon-toggle__label material-icons' },
+	          children
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return IconToggle;
+	}(_react.Component);
+	
+	var Switch = exports.Switch = function (_Component4) {
+	  _inherits(Switch, _Component4);
+	
+	  function Switch() {
+	    _classCallCheck(this, Switch);
+	
+	    return _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).apply(this, arguments));
+	  }
+	
+	  _createClass(Switch, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props4 = this.props,
+	          children = _props4.children,
+	          id = _props4.id,
+	          ripple = _props4.ripple,
+	          className = _props4.className,
+	          rest = _objectWithoutProperties(_props4, ['children', 'id', 'ripple', 'className']);
+	
+	      var classes = (0, _classnames2.default)('mdl-switch mdl-js-switch', {
+	        'mdl-js-ripple-effect': ripple
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'label',
+	        { className: classes, htmlFor: id },
+	        _react2.default.createElement('input', _extends({ id: id }, rest, { type: 'checkbox', className: 'mdl-switch__input' })),
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'mdl-switch__label' },
+	          children
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Switch;
+	}(_react.Component);
 
 /***/ }
 /******/ ]);

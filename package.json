@@ -1,5 +1,5 @@
 {
-  "name": "mdl-react-components",
+  "name": "material-design-lite-react",
   "version": "0.0.1",
   "description": "A react component wrapper for mdl components",
   "main": "index.js",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/creeddesigns/mdl-react-components.git"
+    "url": "git+ssh://git@bitbucket.org/creeddesigns/material-design-lite-react.git"
   },
   "author": "Chris Reed",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/creeddesigns/mdl-react-components#readme",
+  "homepage": "https://bitbucket.org/creeddesigns/material-design-lite-react#readme",
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",

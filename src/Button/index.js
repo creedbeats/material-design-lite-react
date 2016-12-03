@@ -3,6 +3,10 @@ import classNames from 'classnames';
 
 export default class Button extends Component {
 
+  componentDidMount() {
+    componentHandler.upgradeElement(this.element);
+  }
+
   render() {
     const {
       children,
@@ -31,7 +35,13 @@ export default class Button extends Component {
     }, this.props.className);
 
     return (
-      <button {...rest} className={classes}>
+      <button
+        {...rest}
+        ref={(element) => {
+          this.element = element;
+        }}
+        className={classes}
+        >
         {children}
       </button>
     );

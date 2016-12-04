@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import upgradeElement from '../upgrader';
 
-export default class Badge extends Component {
+class Badge extends Component {
   render() {
     const {
       Component = 'span',
@@ -28,3 +29,5 @@ export default class Badge extends Component {
     );
   }
 }
+
+export default upgradeElement(Badge);

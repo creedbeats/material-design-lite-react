@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import upgradeElement from '../upgrader';
 
-export default class Tooltip extends Component {
+class Tooltip extends Component {
   render() {
     const {
       children,
@@ -28,3 +29,5 @@ export default class Tooltip extends Component {
     );
   }
 }
+
+export default upgradeElement(Tooltip);

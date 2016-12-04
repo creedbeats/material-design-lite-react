@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
+import upgradeElement from '../upgrader';
 
-export default class Button extends Component {
-
-  componentDidMount() {
-    componentHandler.upgradeElement(this.element);
-  }
-
+class Button extends Component {
   render() {
     const {
       children,
@@ -37,13 +33,12 @@ export default class Button extends Component {
     return (
       <button
         {...rest}
-        ref={(element) => {
-          this.element = element;
-        }}
         className={classes}
         >
         {children}
       </button>
     );
   }
-}
+};
+
+export default upgradeElement(Button);

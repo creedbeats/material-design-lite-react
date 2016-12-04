@@ -1,7 +1,15 @@
 export Badge from './Badge';
 export Button from './Button';
-export {Card, CardTitle, CardMedia, CardText, CardActions} from './Card';
+export Card from './Card/Card';
+export CardTitle from './Card/CardTitle';
+export CardMedia from './Card/CardMedia';
+export CardText from './Card/CardText';
+export CardActions from './Card/CardActions';
 export Chip from './Chip';
-export {Menu, MenuItem} from './Menu';
-export {Checkbox, Radio, IconToggle, Switch} from './Toggles';
+export Menu from './Menu/Menu';
+export MenuItem from './Menu/MenuItem';
+export Checkbox from './Toggles/Checkbox';
+export Radio from './Toggles/Radio';
+export IconToggle from './Toggles/IconToggle';
+export Switch from './Toggles/Switch';
 export Tooltip from './Tooltip';
